@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    image: kaneai/fastapi-reload:v1
+    container_name: fastapi-container
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - ./server:/server
+    ports:
+      - "85:85"
+
+
